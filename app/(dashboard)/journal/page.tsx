@@ -15,7 +15,7 @@ const getEntries = async () => {
             createdAt: 'desc',
         },
     })
-    await analyze('create me a react component that renders a counting number')
+    await analyze('Today was an okay day, i guess. I found a new coffee shop that was cool, but then i got a flat tire.')
 
     return entries
 }

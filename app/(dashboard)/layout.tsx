@@ -1,4 +1,11 @@
 import { UserButton } from "@clerk/nextjs"
+import Link from "next/link"
+
+const links = [
+    {href: '/', label: 'Home'},
+    {href: '/journal', label: 'Journal'},
+]
+
 
 const DashboardLayout = ({ children }) => {
     return (
@@ -7,6 +14,13 @@ const DashboardLayout = ({ children }) => {
                 <div className="px-4 my-4">
                     <span className="text-3xl">MOOD</span>
                 </div>
+                <ul>
+                    {links.map((link) => (
+                        <li key={link.href} className="px-2 py-6 text-xl">
+                            <Link href={link.href}>{link.label}</Link>
+                        </li>
+                    ))}
+                </ul>
             </aside>
             <div className="ml-[200px] ">
                 <header className="h-[60px] border-b border-black/10">
